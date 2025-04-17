@@ -1,18 +1,18 @@
-    -- E-commerce Inventory and Order Management System
-    --=================================================
+   -- E-commerce Inventory and Order Management System
+  --=================================================
 
--- --Switch to the main database
--- USE MASTER;
--- -- Create database 
--- GO
--- CREATE DATABASE EcommerceSystem;
--- GO
--- --Switch to the newly created "EcommerceSystem" database
--- USE EcommerceSystem;
+--Switch to the main database
+USE MASTER;
+-- Create database / no need if you have already created
+GO
+CREATE DATABASE EcommerceSystem;
+GO
+--Switch to the newly created "EcommerceSystem" database
+USE EcommerceSystem;
 
- GO
+--  GO
 
--- Create tables
+-- -- Create tables
 CREATE TABLE Products (
     ProductID INT PRIMARY KEY IDENTITY(1,1),
     ProductName NVARCHAR(100) NOT NULL,
@@ -227,6 +227,7 @@ BEGIN
         THROW 50000, 'Quantity must be greater than zero.', 1;
         RETURN;
     END
+    GO
     
     DECLARE @CurrentStock INT;
     
